@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Omni Action</title>
+        <link rel="stylesheet" href="base.css">
+        <link rel="stylesheet" href="popup.css">
+        <script src="services/storage_service.js" defer></script>
+        <script src="services/view_binding.js" defer></script>
+        <script src="services/command_form_manager.js" defer></script>
+        <script src="services/commands_list_manager.js" defer></script>
+        <script src="popup.js" defer></script>
+    </head>
+    <body>
+        <template id="id-popup__commands-empty-template">
+            <div class="p-popup__commands-empty-message">
+                登録されたコマンドはありません
+            </div>
+        </template>
+        <template id="id-popup__commands-item-template">
+            <div class="p-popup__command-item" data-bind="commandItem">
+                <div class="p-popup__command-info">
+                    <div class="p-popup__command-name" data-bind="commandName"></div>
+                    <small data-bind="commandDescription"></small>
+                </div>
+                <div class="p-popup__command-actions">
+                    <div class="p-popup__icon-button p-popup__command-action-delete" data-bind="deleteButton">
+                        <img src="assets/delete.svg" alt="delete button">
+                    </div>
+                </div>
+            </div>
+        </template>
+        <div class="p-popup__container">
+            <h1>
+                Omni Action
+            </h1>
+            <div class="p-popup__menus">
+                <div class="p-popup__icon-button p-popup__command-action-delete" data-bind="settingsButton">
+                    <img src="assets/settings.svg" alt="settings button">
+                </div>
+            </div>
+
+            <section>
+                <h2 class="p-popup__section-title">
+                    登録済みコマンド
+                </h2>
+                <div class="p-popup__commands-list" data-bind="commandsList">
+                </div>
+            </section>
+
+            <section data-bind="commandFormContainer">
+                <h2 class="p-popup__section-title" data-bind="formTitle"></h2>
+                <form class="p-popup__command-form" data-bind="commandForm">
+                    <div class="p-popup__command-form-group">
+                        <label>コマンド:</label>
+                        <input type="text" name="command" placeholder="google" required>
+                        <input type="hidden" name="originalCommand">
+                    </div>
+                    <div class="p-popup__command-form-group">
+                        <label>アクションタイプ:</label>
+                        <select name="actionType" required>
+                            <option value="navigate">画面遷移</option>
+                        </select>
+                    </div>
+
+                    <div class="p-popup__command-options">
+                        <div class="p-popup__command-form-group">
+                            <label>URL:</label>
+                            <input type="text" name="navigateUrl" placeholder="https://www.google.com/search?q=%s">
+                            <small>%s は引数に置き換えられます</small>
+                        </div>
+                    </div>
+
+                    <div class="p-popup__command-form-actions">
+                        <button type="button" class="c-button__secondary" data-bind="cancelButton"></button>
+                        <button type="submit" class="c-button__primary" data-bind="saveButton"></button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </body>
+</html>

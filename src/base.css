@@ -1,0 +1,113 @@
+:root {
+    --color-primary: #3c3c3c;
+    --color-secondary: #6f6f6f;
+    --color-accent: #1a73e8;
+    --color-accent-hover: #0d62d1;
+    --color-text-white: #efefef;
+
+    --color-border: #d8d6d6;
+    --color-border-secondary: #efefef;
+    --color-hover: #f8f8f8;
+    --color-hover-dark: #e3e3e3;
+    --color-background: #f5f5f5;
+    --color-background-section: #f4f7fa;
+    --color-background-white: #ffffff;
+
+    --color-info: #0288d1;
+    --color-info-secondary: #e1f5fe;
+    --color-success: #137333;
+    --color-success-secondary: #e6f4ea;
+    --color-error: #ea4335;
+    --color-error-secondary: #ffebee;
+
+    --font-size-primary: 14px;
+    --font-size-secondary: 12px;
+
+    --transition-base: 0.2s ease-in-out;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    color: var(--color-primary);
+    background-color: var(--color-background);
+}
+
+h1 {
+    padding-bottom: 8px;
+    margin: 0;
+    font-size: 24px;
+    color: var(--color-accent);
+    border-bottom: 1px solid var(--color-border-secondary);
+}
+
+h2 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    color: var(--color-primary);
+}
+
+section {
+    margin: 30px 0;
+}
+
+button {
+    padding: 5px 14px;
+    font-family: inherit;
+    font-size: var(--font-size-primary);
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color var(--transition-base);
+
+    &.c-button__primary {
+        color: var(--color-text-white);
+        background-color: var(--color-accent);
+
+        &:hover {
+            background-color: var(--color-accent-hover);
+        }
+    }
+
+    &.c-button__secondary {
+        color: var(--color-primary);
+
+        &:hover {
+            background-color: var(--color-hover-dark);
+        }
+    }
+}
+
+input,
+select,
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 10px;
+    font-family: inherit;
+    font-size: var(--font-size-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: border-color var(--transition-base);
+
+    &:focus {
+        outline: none;
+        border-color: var(--color-accent);
+    }
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+small {
+    display: block;
+    margin-top: 5px;
+    font-size: var(--font-size-secondary);
+    color: var(--color-secondary);
+}
+
+.d-none {
+    display: none;
+}

@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Omni Action",
+    "version": "0.0.1",
+    "description": "This extension lets you execute commands directly from the browser's omnibox to trigger various actions.",
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
+    "action": {
+        "default_popup": "src/popup.html",
+        "default_icon": {
+            "16": "images/icon16.png",
+            "48": "images/icon48.png",
+            "128": "images/icon128.png"
+        }
+    },
+    "permissions": [
+        "storage"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "src/background.js"
+    },
+    "omnibox": {
+        "keyword": "oa"
+    },
+    "options_page": "src/options.html"
+}

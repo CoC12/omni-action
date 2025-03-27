@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Omni Action 詳細設定</title>
+        <link rel="stylesheet" href="base.css">
+        <link rel="stylesheet" href="options.css">
+        <script src="services/storage_service.js"></script>
+        <script src="services/view_binding.js" defer></script>
+        <script src="options.js"></script>
+    </head>
+    <body>
+        <div class="p-options__container">
+            <h1>
+                Omni Action 設定
+            </h1>
+            <div class="p-options__status-message" data-bind="statusMessage"></div>
+
+            <section>
+                <h2>
+                    コマンドのインポート / エクスポート
+                </h2>
+                <small>
+                    登録したコマンドのインポート/エクスポートができます。
+                </small>
+                <input type="file" class="d-none" accept=".json" data-bind="fileInput">
+                <div class="p-options__button-group">
+                    <button type="button" class="c-button__primary" data-bind="exportButton">
+                        エクスポート
+                    </button>
+                    <button type="button" class="c-button__secondary" data-bind="importButton">
+                        インポート
+                    </button>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+.p-popup__icon-button {
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color var(--transition-base);
+
+    &:hover {
+        background-color: var(--color-hover-dark);
+    }
+}
+
+.p-popup__container {
+    width: 500px;
+    padding: 20px;
+    background-color: var(--color-background-white);
+
+    .p-popup__menus {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 5px;
+        line-height: 1;
+    }
+}
+
+.p-popup__commands-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+
+    .p-popup__command-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-bottom: 1px solid var(--color-border-secondary);
+        transition: background-color var(--transition-base);
+
+        &:hover {
+            cursor: pointer;
+            background-color: var(--color-hover);
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .p-popup__command-info {
+            .p-popup__command-name {
+                font-size: var(--font-size-primary);
+                font-weight: bold;
+                color: var(--color-accent);
+            }
+        }
+
+        .p-popup__command-actions {
+            display: flex;
+            gap: 5px;
+            line-height: 1;
+
+            .p-popup__command-action-delete:hover {
+                background-color: var(--color-error-secondary);
+            }
+        }
+    }
+}
+
+.p-popup__commands-empty-message {
+    padding: 15px;
+    color: var(--color-secondary);
+    text-align: center;
+}
+
+.p-popup__command-form {
+
+    .p-popup__command-form-group {
+        margin-bottom: 16px;
+    }
+
+    .p-popup__command-options {
+        padding: 12px;
+        margin-top: 16px;
+        background-color: var(--color-background-section);
+        border-radius: 8px;
+
+        .p-popup__command-form-group:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .p-popup__command-form-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-top: 20px;
+    }
+}
